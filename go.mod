@@ -1,4 +1,4 @@
-module grpccrudapi
+module github.com/shivanik6z/greetservice
 
 go 1.17
 

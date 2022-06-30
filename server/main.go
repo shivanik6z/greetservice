@@ -1,7 +1,7 @@
 package main
 
 import (
-	pb "github.com/shivanik6z/greetservice/protos"
+	pb "github.com/shivanik6z/greetservice/protos/greetpb"
 )
 
 type GreetingServer struct {
