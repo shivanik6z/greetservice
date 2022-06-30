@@ -4,7 +4,7 @@
 // - protoc             v3.19.4
 // source: protos/greeting.proto
 
-package protos
+package greet
 
 import (
 	context "context"
@@ -35,7 +35,7 @@ func NewGreetingServiceClient(cc grpc.ClientConnInterface) GreetingServiceClient
 
 func (c *greetingServiceClient) Greet(ctx context.Context, in *Name, opts ...grpc.CallOption) (*Greeting, error) {
 	out := new(Greeting)
-	err := c.cc.Invoke(ctx, "/greetingservice.GreetingService/Greet", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/greetpb.GreetingService/Greet", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -80,7 +80,7 @@ func _GreetingService_Greet_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/greetingservice.GreetingService/Greet",
+		FullMethod: "/greetpb.GreetingService/Greet",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(GreetingServiceServer).Greet(ctx, req.(*Name))
@@ -92,7 +92,7 @@ func _GreetingService_Greet_Handler(srv interface{}, ctx context.Context, dec fu
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var GreetingService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "greetingservice.GreetingService",
+	ServiceName: "greetpb.GreetingService",
 	HandlerType: (*GreetingServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{

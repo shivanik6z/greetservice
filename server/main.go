@@ -1,10 +1,12 @@
 package main
 
-//pb "protos/greetingservice/protos"
+import (
+	pb "github.com/shivanik6z/greetservice/protos"
+)
 
-// type GreetingServer struct {
-// 	pb.UnimplementedGreetingServiceServer
-// }
+type GreetingServer struct {
+	pb.UnimplementedGreetingServiceServer
+}
 
 func main() {
 
