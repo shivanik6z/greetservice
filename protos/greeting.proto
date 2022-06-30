@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "protos/greet";
 
-package greetpb ;
+package greet ;
 
 service GreetingService{
     rpc Greet (Name) returns (Greeting);
